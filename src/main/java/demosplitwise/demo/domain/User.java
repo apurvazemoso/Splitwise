@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="users")
+@Table(name="splitwiseusers")
 public class User implements Serializable{
     private static final long serialVersionUID = -3009157732242249406L;
     @Id

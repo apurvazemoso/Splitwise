@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="group")
+@Table(name="splitwisegroup")
 public class Group implements Serializable {
     public static final long serialVersionUID = -3109157732242239406L;
 
