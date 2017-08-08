@@ -13,10 +13,10 @@ public class User implements Serializable{
     @Column(name="Userid")
     private long userid;
 
-    @Column(name="name")
+    @Column(name="username",unique = true)
     String name;
 
-    @Column(name="emailid")
+    @Column(name="emailid", unique = true)
     String emailID;
 
     @Column(name="phone_number")
