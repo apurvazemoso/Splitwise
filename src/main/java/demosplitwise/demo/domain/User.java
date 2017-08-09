@@ -5,13 +5,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="users")
+@Table(name="splitwiseusers")
 public class User implements Serializable{
     private static final long serialVersionUID = -3009157732242249406L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="Userid")
-    private long userid;
+    private long userID;
 
     @Column(name="name")
     String name;
@@ -20,7 +20,7 @@ public class User implements Serializable{
     String emailID;
 
     @Column(name="phone_number")
-    long phone_number;
+    string  phone_number;
 
     @Column(name="age")
     int age;

@@ -52,7 +52,7 @@ public class Group implements Serializable {
 
     @PreUpdate
     public void setLastUpdate() {  this.dateOfUpdate = new Date();}
-    
+
     @Column(name = "Total_Members")
     private int totalMembers;
 
