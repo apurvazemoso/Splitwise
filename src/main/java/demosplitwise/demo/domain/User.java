@@ -5,32 +5,32 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="users")
+@Table(name="splitwiseusers")
 public class User implements Serializable{
     private static final long serialVersionUID = -3009157732242249406L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="Userid")
-    private long userid;
+    @Column(name="Userid", unique = true)
+    private long userID;
 
-    @Column(name="name")
-    String name;
+    @Column(name="username",unique = true)
+    private String name;
 
     @Column(name="emailid")
-    String emailID;
+    private String emailID;
 
     @Column(name="phone_number")
-    long phone_number;
+    private String phone_number;
 
     @Column(name="age")
-    int age;
+    private int age;
 
     @Column(name="debt")
-    int debt;
+    private int debt;
 
     protected User(){}
 
-    public User(String name,String emailid,long phone_number,int age,int debt){
+    public User(String name,String emailid,String phone_number,int age,int debt){
         this.name=name;
         this.emailID=emailid;
         this.phone_number=phone_number;
@@ -38,9 +38,57 @@ public class User implements Serializable{
         this.debt=debt;
     }
 
+    public long getUserid() {
+        return userID;
+    }
+
+    public void setUserid(long userid) {
+        this.userID = userid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmailID() {
+        return emailID;
+    }
+
+    public void setEmailID(String emailID) {
+        this.emailID = emailID;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getDebt() {
+        return debt;
+    }
+
+    public void setDebt(int debt) {
+        this.debt = debt;
+    }
+
     @Override
     public String toString(){
-        return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%d, age=%d, debt=%d]",userid,name,
+        return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%s, age=%d, debt=%d]",userID,name,
                 emailID,phone_number,age,debt);
     }
 }
