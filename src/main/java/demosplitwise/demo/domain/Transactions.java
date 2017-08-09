@@ -41,8 +41,10 @@ public class Transactions implements Serializable{
     @PreUpdate
     public void setLastUpdate() { this.dom = new Date();}
 
+    @Transient
     public List<Long> lender = new ArrayList<Long>();
 
+    @Transient
     public List<Long> borrower = new ArrayList<Long>();
 
 
