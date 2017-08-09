@@ -20,7 +20,7 @@ public class User implements Serializable{
     private String emailID;
 
     @Column(name="phone_number")
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(name="age")
     private int age;
@@ -33,7 +33,7 @@ public class User implements Serializable{
     public User(String name,String emailid,String phone_number,int age,int debt){
         this.name=name;
         this.emailID=emailid;
-        this.phone_number=phone_number;
+        this.phoneNumber=phone_number;
         this.age=age;
         this.debt=debt;
     }
@@ -62,12 +62,12 @@ public class User implements Serializable{
         this.emailID = emailID;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public int getAge() {
@@ -89,6 +89,6 @@ public class User implements Serializable{
     @Override
     public String toString(){
         return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%s, age=%d, debt=%d]",userID,name,
-                emailID,phone_number,age,debt);
+                emailID,phoneNumber,age,debt);
     }
 }
