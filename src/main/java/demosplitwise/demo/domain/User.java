@@ -11,7 +11,7 @@ public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="Userid", unique = true)
-    private long userid;
+    private long userID;
 
     @Column(name="username",unique = true)
     private String name;
@@ -39,11 +39,11 @@ public class User implements Serializable{
     }
 
     public long getUserid() {
-        return userid;
+        return userID;
     }
 
     public void setUserid(long userid) {
-        this.userid = userid;
+        this.userID = userid;
     }
 
     public String getName() {
@@ -88,7 +88,7 @@ public class User implements Serializable{
 
     @Override
     public String toString(){
-        return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%s, age=%d, debt=%d]",userid,name,
+        return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%s, age=%d, debt=%d]",userID,name,
                 emailID,phone_number,age,debt);
     }
 }
