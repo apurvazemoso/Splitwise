@@ -13,44 +13,52 @@ public class UserGroup {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name= "group_id")
-    private long gid;
+    @Column(name = "group_id")
+    private long groupId;
 
     @Column(name = "user_id")
-    private long uid;
+    private long userId;
+
+    @Transient
+    private long transId;
+
+    public long getTransId() {
+        return transId;
+    }
 
     @Column(name = "date_of_joining")
+
     private Date doj;
 
     @Column(name = "group_debt")
     private double debt;
 
-    protected UserGroup(){
+    protected UserGroup() {
 
     }
 
-    public UserGroup(long gid, long uid, Date doj, double debt) {
-        this.gid = gid;
-        this.uid = uid;
+    public UserGroup(long groupId, long userId, Date doj, double debt) {
+        this.groupId = groupId;
+        this.userId = userId;
         this.doj = doj;
         this.debt = debt;
     }
 
     public long getUid() {
-        return uid;
+        return userId;
     }
 
     public void setUid(long uid) {
-        this.uid = uid;
+        this.userId = uid;
     }
 
     public long getGid() {
 
-        return gid;
+        return groupId;
     }
 
     public void setGid(long gid) {
-        this.gid = gid;
+        this.groupId = gid;
     }
 
     public Date getDoj() {
@@ -72,10 +80,11 @@ public class UserGroup {
     @Override
     public String toString() {
         return "UserGroup{" +
-                "gid=" + gid +
-                ", uid=" + uid +
+                "gid=" + groupId +
+                ", uid=" + userId +
                 ", doj=" + doj +
                 ", debt=" + debt +
                 '}';
     }
 }
+

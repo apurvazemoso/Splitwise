@@ -1,15 +1,27 @@
 package demosplitwise.demo.controllers;
 
 import demosplitwise.demo.domain.Group;
+import demosplitwise.demo.domain.UserGroup;
 import demosplitwise.demo.repositories.GroupRepository;
+import demosplitwise.demo.repositories.UserGroupRepository;
+import demosplitwise.demo.repositories.UserTransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class GroupController {
 
     @Autowired
     GroupRepository groupRepo;
+
+    @Autowired
+    UserGroupRepository userGroupRepository;
+
+    @Autowired
+    UserTransactionRepository userTransactionRepository;
 
     @RequestMapping(value = "/group/save", method = RequestMethod.POST)
     public void register(@RequestBody Group group){
@@ -21,43 +33,30 @@ public class GroupController {
         groupRepo.save(group);
     }
 
-    @RequestMapping(value = "/group/findall", method = RequestMethod.GET)
-    public String findAll(){
-        String result = "<html>";
-
+    @RequestMapping(value = "/group/findAll", method = RequestMethod.GET)
+    public List<Group> findAll(){
+        List<Group> mylist = new ArrayList<>();
         for(Group group : groupRepo.findAll()){
-            result += "<div>" + group.toString() + "</div>";
+            mylist.add(group);
         }
 
-        return result + "</html>";
+        return mylist;
     }
 
-    @RequestMapping(value="/group/findbyid")
-    public String findById(@RequestParam("id")long id){
-        String result = " ";
-        result = groupRepo.findOne(id).toString();
-        return result;
+    @RequestMapping(value="/group/findById", method = RequestMethod.GET)
+    public Group findById(@RequestParam("id")long id){
+        return groupRepo.findOne(id);
     }
 
-    @RequestMapping(value="/group/findbygroupname")
-    public String findByGroupName(@RequestParam("name")String groupName){
-        String result = "<html>";
-
-        for(Group group: groupRepo.findByGroupName(groupName)){
-            result += "<div>" + group.toString() + "</div>";
+    @RequestMapping(value="/group/findAllByUserId",method = RequestMethod.GET)
+    public List<Group> findAllByUserId(@RequestParam("id")long id){
+        List<Group> mylist = new ArrayList<>();
+        for(UserGroup userGroup: userGroupRepository.findByUserId(id)){
+            mylist.add(groupRepo.findByGroupId(userGroup.getGid()));
         }
 
-        return result + "</html>";
+        return mylist;
     }
 
-    @RequestMapping(value="/group/findbycreatorname")
-    public String findByCreatorName(@RequestParam("name")String creatorName){
-        String result = "<html>";
 
-        for(Group group: groupRepo.findByCreatedBy(creatorName)){
-            result += "<div>" + group.toString() + "</div>";
-        }
-
-        return result + "</html>";
-    }
 }

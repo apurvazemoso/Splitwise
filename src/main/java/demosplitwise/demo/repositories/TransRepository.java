@@ -7,4 +7,5 @@ import java.util.Date;
 import java.util.List;
 
 public interface TransRepository extends CrudRepository<Transactions,Long>{
-    List<Transactions> findByDot(Date date);}
+    List<Transactions> findByGroupId(long id);
+}

@@ -19,23 +19,57 @@ public class Transactions implements Serializable{
     @Column(name = "transId")
     private long transID;
 
+    @Column(nullable = true,name="groupId")
+    private Long groupId;
+
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(long groupId) {
+        this.groupId = groupId;
+    }
+
+
     @Column(name = "Description")
     String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    @Column(name = "Transaction_Amount")
+    int amount;
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public int getAmount() {
         return amount;
     }
 
-    @Column(name = "Transaction_Amount")
-    int amount;
-
     @Column(name="Mode_of_Payment")
     String mop;
+
+    public String getMop() {
+        return mop;
+    }
+
+    public void setMop(String mop) {
+        this.mop = mop;
+    }
 
     @Column(name = "Date_of_Transaction",updatable = false)
     private Date dot= new Date();
 
-    @Column(name = "Date_of_Modification_of_transaction")
+    @Column(name = "Date_of_Modification")
     private Date dom = new Date();
 
     @PreUpdate

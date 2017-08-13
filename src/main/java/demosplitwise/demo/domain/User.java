@@ -10,16 +10,16 @@ public class User implements Serializable{
     private static final long serialVersionUID = -3009157732242249406L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="Userid", unique = true)
-    private long userID;
+    @Column(name="UserId", unique = true)
+    private long userId;
 
-    @Column(name="username",unique = true)
+    @Column(name="userName",unique = true)
     private String name;
 
-    @Column(name="emailid")
-    private String emailID;
+    @Column(name="emailId")
+    private String emailId;
 
-    @Column(name="phone_number")
+    @Column(name="phoneNumber")
     private String phoneNumber;
 
     @Column(name="age")
@@ -30,20 +30,19 @@ public class User implements Serializable{
 
     protected User(){}
 
-    public User(String name,String emailid,String phone_number,int age,int debt){
+    public User(String name,String emailid,String phone_number,int age){
         this.name=name;
-        this.emailID=emailid;
+        this.emailId=emailid;
         this.phoneNumber=phone_number;
         this.age=age;
-        this.debt=debt;
     }
 
     public long getUserid() {
-        return userID;
+        return userId;
     }
 
     public void setUserid(long userid) {
-        this.userID = userid;
+        this.userId = userid;
     }
 
     public String getName() {
@@ -55,11 +54,11 @@ public class User implements Serializable{
     }
 
     public String getEmailID() {
-        return emailID;
+        return emailId;
     }
 
     public void setEmailID(String emailID) {
-        this.emailID = emailID;
+        this.emailId = emailID;
     }
 
     public String getPhone_number() {
@@ -69,6 +68,8 @@ public class User implements Serializable{
     public void setPhone_number(String phone_number) {
         this.phoneNumber = phone_number;
     }
+
+
 
     public int getAge() {
         return age;
@@ -88,7 +89,7 @@ public class User implements Serializable{
 
     @Override
     public String toString(){
-        return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%s, age=%d, debt=%d]",userID,name,
-                emailID,phoneNumber,age,debt);
+        return String.format("User[userid=%d,name=%s, emailid=%s, phone_number=%s, age=%d, debt=%d]",userId,name,
+                emailId,phoneNumber,age,debt);
     }
 }

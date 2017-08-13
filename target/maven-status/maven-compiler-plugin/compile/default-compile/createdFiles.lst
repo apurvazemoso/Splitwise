@@ -1,0 +1,15 @@
+demosplitwise/demo/domain/Transactions.class
+demosplitwise/demo/repositories/GroupRepository.class
+demosplitwise/demo/controllers/GroupController.class
+demosplitwise/demo/SplitwiseApplication.class
+demosplitwise/demo/domain/UserGroup.class
+demosplitwise/demo/domain/User.class
+demosplitwise/demo/repositories/UserGroupRepository.class
+demosplitwise/demo/controllers/TransactionController.class
+demosplitwise/demo/domain/GroupTransaction.class
+demosplitwise/demo/repositories/UserRepository.class
+demosplitwise/demo/domain/UserTransaction.class
+demosplitwise/demo/domain/Group.class
+demosplitwise/demo/controllers/UserController.class
+demosplitwise/demo/repositories/TransRepository.class
+demosplitwise/demo/repositories/UserTransactionRepository.class

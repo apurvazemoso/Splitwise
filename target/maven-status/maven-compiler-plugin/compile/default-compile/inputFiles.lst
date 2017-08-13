@@ -1,0 +1,15 @@
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/controllers/UserController.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/domain/Transactions.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/repositories/GroupRepository.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/repositories/UserGroupRepository.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/domain/GroupTransaction.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/domain/UserGroup.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/domain/User.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/controllers/TransactionController.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/repositories/TransRepository.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/controllers/GroupController.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/repositories/UserRepository.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/domain/UserTransaction.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/domain/Group.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/SplitwiseApplication.java
+/home/zemoso/Desktop/Splitwise/src/main/java/demosplitwise/demo/repositories/UserTransactionRepository.java
